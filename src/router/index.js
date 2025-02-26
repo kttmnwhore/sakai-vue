@@ -5,7 +5,12 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/',
+            path: '/admin/auth',
+            name: 'auth',
+            component: () => import('@/views/pages/auth/Login.vue')
+        },
+        {
+            path: '/admin/home',
             component: AppLayout,
             children: [
                 {
@@ -14,109 +19,33 @@ const router = createRouter({
                     component: () => import('@/views/Dashboard.vue')
                 },
                 {
-                    path: '/uikit/formlayout',
+                    path: '/admin/media',
                     name: 'formlayout',
-                    component: () => import('@/views/uikit/FormLayout.vue')
+                    component: () => import('@/views/uikit/MediaPage.vue')
                 },
                 {
-                    path: '/uikit/input',
+                    path: '/admin/actual',
                     name: 'input',
-                    component: () => import('@/views/uikit/InputDoc.vue')
+                    component: () => import('@/views/uikit/ActualPage.vue')
                 },
                 {
-                    path: '/uikit/button',
+                    path: '/admin/biography',
                     name: 'button',
-                    component: () => import('@/views/uikit/ButtonDoc.vue')
-                },
-                {
-                    path: '/uikit/table',
-                    name: 'table',
-                    component: () => import('@/views/uikit/TableDoc.vue')
-                },
-                {
-                    path: '/uikit/list',
-                    name: 'list',
-                    component: () => import('@/views/uikit/ListDoc.vue')
-                },
-                {
-                    path: '/uikit/tree',
-                    name: 'tree',
-                    component: () => import('@/views/uikit/TreeDoc.vue')
-                },
-                {
-                    path: '/uikit/panel',
-                    name: 'panel',
-                    component: () => import('@/views/uikit/PanelsDoc.vue')
+                    component: () => import('@/views/uikit/BiographyPage.vue')
                 },
 
                 {
-                    path: '/uikit/overlay',
-                    name: 'overlay',
-                    component: () => import('@/views/uikit/OverlayDoc.vue')
+                    path: '/admin/appeals',
+                    name: 'list',
+                    component: () => import('@/views/uikit/AppealsPage.vue')
                 },
                 {
-                    path: '/uikit/media',
-                    name: 'media',
-                    component: () => import('@/views/uikit/MediaDoc.vue')
+                    path: '/admin/category',
+                    name: 'landing',
+                    component: () => import('@/views/uikit/CategoryPage.vue')
                 },
-                {
-                    path: '/uikit/message',
-                    name: 'message',
-                    component: () => import('@/views/uikit/MessagesDoc.vue')
-                },
-                {
-                    path: '/uikit/file',
-                    name: 'file',
-                    component: () => import('@/views/uikit/FileDoc.vue')
-                },
-                {
-                    path: '/uikit/menu',
-                    name: 'menu',
-                    component: () => import('@/views/uikit/MenuDoc.vue')
-                },
-                {
-                    path: '/uikit/charts',
-                    name: 'charts',
-                    component: () => import('@/views/uikit/ChartDoc.vue')
-                },
-                {
-                    path: '/uikit/misc',
-                    name: 'misc',
-                    component: () => import('@/views/uikit/MiscDoc.vue')
-                },
-                {
-                    path: '/uikit/timeline',
-                    name: 'timeline',
-                    component: () => import('@/views/uikit/TimelineDoc.vue')
-                },
-                {
-                    path: '/pages/empty',
-                    name: 'empty',
-                    component: () => import('@/views/pages/Empty.vue')
-                },
-                {
-                    path: '/pages/crud',
-                    name: 'crud',
-                    component: () => import('@/views/pages/Crud.vue')
-                },
-                {
-                    path: '/documentation',
-                    name: 'documentation',
-                    component: () => import('@/views/pages/Documentation.vue')
-                }
             ]
         },
-        {
-            path: '/landing',
-            name: 'landing',
-            component: () => import('@/views/pages/Landing.vue')
-        },
-        {
-            path: '/pages/notfound',
-            name: 'notfound',
-            component: () => import('@/views/pages/NotFound.vue')
-        },
-
         {
             path: '/auth/login',
             name: 'login',
