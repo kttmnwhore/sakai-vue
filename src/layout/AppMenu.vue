@@ -44,9 +44,14 @@ const model = ref([
                 icon: 'pi pi-fw pi-user',
                 items: [
                     {
-                        label: 'Login',
-                        icon: 'pi pi-fw pi-sign-in',
+                        label: 'Выйти',
+                        icon: 'pi pi-fw pi-sign-out',
                         to: '/auth/login'
+                    },
+                    {
+                        label: 'Регистрация',
+                        icon: 'pi pi-fw pi-user-plus',
+                        to: '/auth/register'
                     },
                     {
                         label: 'Error',

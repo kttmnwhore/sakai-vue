@@ -5,7 +5,11 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
-            path: '/admin/auth',
+            path: '/',
+            redirect: '/auth'
+        },
+        {
+            path: '/auth',
             name: 'auth',
             component: () => import('@/views/pages/auth/Login.vue')
         },
@@ -33,7 +37,6 @@ const router = createRouter({
                     name: 'button',
                     component: () => import('@/views/uikit/BiographyPage.vue')
                 },
-
                 {
                     path: '/admin/appeals',
                     name: 'list',
@@ -46,10 +49,11 @@ const router = createRouter({
                 },
             ]
         },
+
         {
-            path: '/auth/login',
-            name: 'login',
-            component: () => import('@/views/pages/auth/Login.vue')
+            path: '/auth/register',
+            name: 'register',
+            component: () => import('@/views/pages/auth/Registration.vue')
         },
         {
             path: '/auth/access',
